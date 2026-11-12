@@ -1,0 +1,16 @@
+        local menu = Instance.new("Frame")
+        menu.Name = "Menu"
+        menu.BackgroundColor3 = theme.SurfaceField
+        menu.BorderSizePixel = 0
+        menu.AutomaticSize = Enum.AutomaticSize.Y
+        menu.Size = UDim2.new(1, 0, 0, 0)
+        menu.Visible = false
+        menu.LayoutOrder = 2
+        menu.Parent = frame
+        corner(menu, theme.RadiusMd)
+        stroke(menu, theme.Hairline, 1)
+        pad(menu, 4, 4, 4, 4)
+        local cells = #list > 10 and 3 or 2
+        local grid = Instance.new("UIGridLayout")
+        grid.CellSize = UDim2.new(1 / cells, -math.ceil(2 * (cells - 1) / cells) - 1, 0, 26)
+        grid.CellPadding, grid.FillDirectionMaxCells, grid.SortOrder =
